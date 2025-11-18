@@ -3,12 +3,9 @@
 using namespace std;
 struct filas{
     char prior;
-    int horas;
-    int minutos;
+    int horaChegada;
+    int minutosChegada;
 };
-void verificaFilas(const filas fila){
-    
-}
 int main(){
     queue<filas> emergencia;
     queue<filas> urgencia;
@@ -17,15 +14,12 @@ int main(){
     char opcao;
     string senha;
     filas aux;
-    int totalEmer = 0;
-    int totalUrg = 0;
-    int totalPoucoU = 0;
-    int totalnaoU = 0;
+    int totalEmer, totalGeral, totalUrg, totalPoucoU, totalnaoU = 0;
     switch (opcao)
     {
     case 'C':
         cin >> senha; 
-        cin >> aux.prior >> aux.horas >> aux.minutos;
+        cin >> aux.prior >> aux.horaChegada >> aux.minutosChegada;
         if (aux.prior == 'V')
         {
             emergencia.push(aux);
@@ -35,6 +29,7 @@ int main(){
         {
             urgencia.push(aux);
             totalUrg++;
+            totalGeral++;
         }
         else if (aux.prior == 'D')
         {
@@ -45,10 +40,10 @@ int main(){
             totalnaoU++;
         }
     case 'A':
-        cin >> aux.horas >> aux.minutos;
+        cin >> aux.horaChegada >> aux.minutosChegada;
         if (emergencia.size() == 0 && urgencia.size() == 0 && poucoUrgente.size() == 0 && naoUrgente.size()== 0)
         {
-            cout << aux.horas << " " << aux.minutos << " Sem pacientes aguardando atendimento" << endl;
+            cout << aux.horaChegada << " " << aux.minutosChegada << " Sem pacientes aguardando atendimento" << endl;
         }
         if (!emergencia.empty())
         {   
