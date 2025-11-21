@@ -29,7 +29,7 @@ int main()
     cout << "\nDigite:\n C- Chegou paciente, A- Atendimento, D- Informações das filas, Q- Encerrar" << endl; 
     cout << "Exemplos: " << endl;
     cout << " C senha V 10 50     A 10 55         D                        Q\n" << endl;
-    while(opcao != 'Q')
+while(opcao != 'Q')
     {
     cin >> opcao;
     switch (opcao)
@@ -40,24 +40,27 @@ int main()
 	    cin >> aux.prior >> aux.horaChegada >> aux.minutosChegada;
 	    switch (aux.prior) 
 	    {
-		case 'V':
-			emergencia.push(aux);
-			cout << "Paciente adicionado\n" << endl;
-			totalEsperando++; // contagem para pico de pacientes na espera
-		case 'A':
-			urgencia.push(aux);
-			cout << "Paciente adicionado\n" << endl;
-			totalEsperando++;
-
-		case 'D':
-			poucoUrgente.push(aux);
-			cout << "Paciente adicionado\n" << endl;
-			totalEsperando++;
-		default:
-			naoUrgente.push(aux);
-			cout << "Paciente adicionado\n" << endl;
-			totalEsperando++;
-	    }
+			case 'V':
+				emergencia.push(aux);
+				cout << "Paciente adicionado\n" << endl;
+				totalEsperando++; // contagem para pico de pacientes na espera
+				break;
+			case 'A':
+				urgencia.push(aux);
+				cout << "Paciente adicionado\n" << endl;
+				totalEsperando++;
+				break;
+			case 'D':
+				poucoUrgente.push(aux);
+				cout << "Paciente adicionado\n" << endl;
+				totalEsperando++;
+				break;
+			case 'B':
+				naoUrgente.push(aux);
+				cout << "Paciente adicionado\n" << endl;
+				totalEsperando++;
+				break;
+			}
 	    break;
 
 	case 'A':
