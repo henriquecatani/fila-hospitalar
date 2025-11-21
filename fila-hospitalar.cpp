@@ -133,16 +133,16 @@ while(opcao != 'Q')
 	    break;
 
 	case 'D':
-		cout << "V: " << emergencia.size() << " A: " << urgencia.size() << " D: " << poucoUrgente.size() << " B: " << naoUrgente.size();
+		cout << "V: " << emergencia.size() << " A: " << urgencia.size() << " D: " << poucoUrgente.size() << " B=" << naoUrgente.size();
 		cout << " | Atendidos: " << totalGeral << endl;
 		break;
 
 	case 'Q':
 		cout << "Total atendidos: " << totalGeral << endl;
 		cout << "Atendidos por prioridade: " << "V: " << totalEmer;
-		cout << " A: " << totalUrg;
-		cout << " D: " << totalPoucoU;
-		cout << " B: " << totalnaoU << endl;
+		cout << " A=" << totalUrg;
+		cout << " D=" << totalPoucoU;
+		cout << " B=" << totalnaoU << endl;
 		cout << "Pico de lotação: " << picoLotacao << endl;
 		cout << "Espera máxima: " << esperaMaxima << " min" << endl;
 		break;
